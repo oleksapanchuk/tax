@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xml/user.xsd">
+
+    <user>
+        <id_user>1</id_user>
+        <first_name>Катерина</first_name>
+        <last_name>Кондратюк</last_name>
+        <email>catrinnn@gmail.com</email>
+        <taxes>
+            <tax idTax="1">6500.0</tax>
+            <tax idTax="5">3000</tax>
+        </taxes>
+    </user>
+
+    <user>
+        <id_user>11</id_user>
+        <first_name>Богдан</first_name>
+        <last_name>Карасійчук</last_name>
+        <email>bodichkakar@gmail.com</email>
+        <taxes>
+            <tax idTax="3">300</tax>
+            <tax idTax="7">40</tax>
+            <tax idTax="2">400</tax>
+        </taxes>
+    </user>
+
+</root>

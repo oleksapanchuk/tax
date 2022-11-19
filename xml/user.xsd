@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+
+                <xsd:element name="user" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+
+                            <xsd:element name="id_user">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:int">
+                                        <xsd:minInclusive value="1"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+
+                            <xsd:element name="first_name">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:pattern value="[A-ZА-Я][a-zа-я]*"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+
+                            <xsd:element name="last_name">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:pattern value="[a-zA-Zа-яіА-Я]+([ '-][a-zA-Zіа-яА-Я]+)*"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+
+                            <xsd:element name="email">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:pattern value="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+
+                            <xsd:element name="taxes">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+
+                                        <xsd:element name="tax"  minOccurs="0" maxOccurs="unbounded">
+                                            <xsd:complexType>
+
+                                                <xsd:simpleContent>
+                                                    <xsd:restriction base="xsd:decimal">
+                                                        <xsd:minInclusive value="0"/>
+                                                        <xsd:attribute name="idTax" use="required">
+                                                            <xsd:simpleType>
+                                                                <xsd:restriction base="xsd:int">
+                                                                    <xsd:enumeration value="1"/>
+                                                                    <xsd:enumeration value="2"/>
+                                                                    <xsd:enumeration value="3"/>
+                                                                    <xsd:enumeration value="4"/>
+                                                                    <xsd:enumeration value="5"/>
+                                                                    <xsd:enumeration value="6"/>
+                                                                    <xsd:enumeration value="7"/>
+                                                                </xsd:restriction>
+                                                            </xsd:simpleType>
+                                                        </xsd:attribute>
+                                                    </xsd:restriction>
+                                                </xsd:simpleContent>
+
+                                            </xsd:complexType>
+                                        </xsd:element>
+
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
