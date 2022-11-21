@@ -2,7 +2,6 @@ package com.panchuk.tax.dao.xml;
 
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.dao.TaxDAO;
-import com.panchuk.tax.dao.mysql.MysqlTaxDAO;
 
 public class XMLDAOFactory extends DAOFactory {
 

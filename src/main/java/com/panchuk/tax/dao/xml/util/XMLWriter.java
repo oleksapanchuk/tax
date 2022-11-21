@@ -28,6 +28,8 @@ public class XMLWriter {
 
         // root elements
         Element rootElement = doc.createElement("root");
+        rootElement.setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+        rootElement.setAttribute("xsi:noNamespaceSchemaLocation", "../xml/user.xsd");
         doc.appendChild(rootElement);
 
 
@@ -47,9 +49,17 @@ public class XMLWriter {
             lastName.setTextContent(u.getLastName());
             user.appendChild(lastName);
 
+            Element sex = doc.createElement(XMLConstant.TAG_SEX);
+            sex.setTextContent(u.getSex().name().toLowerCase());
+            user.appendChild(sex);
+
             Element email = doc.createElement(XMLConstant.TAG_EMAIL);
             email.setTextContent(u.getEmail());
             user.appendChild(email);
+
+            Element dateOfBirth = doc.createElement(XMLConstant.TAG_DATE_OF_BIRTH);
+            dateOfBirth.setTextContent(u.getDateOfBirth());
+            user.appendChild(dateOfBirth);
 
             user.appendChild(createElementTaxes(doc, u));
 
@@ -82,11 +92,32 @@ public class XMLWriter {
     private static Element createElementTaxes(Document doc, User u) {
         Element taxes = doc.createElement(XMLConstant.TAG_TAXES);
 
+        if (u.getTax() == null) return taxes;
+
         for (TaxType t : u.getTax()) {
 
             Element tax = doc.createElement(XMLConstant.TAG_TAX);
-            tax.setAttribute("idTax", String.valueOf(t.getType()));
-            tax.setTextContent(String.valueOf(t.getValue()));
+
+            Element idPayment = doc.createElement(XMLConstant.TAG_ID_PAYMENT);
+            idPayment.setTextContent(String.valueOf(t.getIdNumber()));
+            tax.appendChild(idPayment);
+
+            Element type = doc.createElement(XMLConstant.TAG_TAX_ID);
+            type.setTextContent(String.valueOf(t.getType()));
+            tax.appendChild(type);
+
+            Element value = doc.createElement(XMLConstant.TAG_VALUE);
+            value.setTextContent(String.valueOf(t.getValue()));
+            tax.appendChild(value);
+
+            Element amountOfTax = doc.createElement(XMLConstant.TAG_AMOUNT_OF_TAX);
+            amountOfTax.setTextContent(String.valueOf(t.getAmountOfTax()));
+            tax.appendChild(amountOfTax);
+
+            Element paymentDate = doc.createElement(XMLConstant.TAG_PAYMENT_DATE);
+            paymentDate.setTextContent(t.getDatePayment());
+            tax.appendChild(paymentDate);
+
             taxes.appendChild(tax);
 
         }
@@ -108,4 +139,5 @@ public class XMLWriter {
         transformer.transform(source, result);
 
     }
+
 }

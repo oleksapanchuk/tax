@@ -1,6 +1,7 @@
 package com.panchuk.tax.service.pretty_print;
 
 import com.panchuk.tax.constant.ColorConstant;
+import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.menu.MenuItem;
 import com.panchuk.tax.model.TaxType;
 import com.panchuk.tax.model.User;
@@ -17,6 +18,11 @@ public class PrettyConsolePrinting {
     public static void printUserList(List<User> userList) {
         CellStyle centerStyle = new CellStyle(CellStyle.HorizontalAlign.CENTER);
         Table table = new Table(7, BorderStyle.UNICODE_ROUND_BOX, ShownBorders.ALL);
+
+        if (userList == null) {
+            printString(ProjectConstant.TEXT_WENT_WRONG);
+            return;
+        }
 
         table.addCell(ColorConstant.YELLOW_BOLD + "  ID  " + ColorConstant.RESET, centerStyle);
         table.addCell(ColorConstant.YELLOW_BOLD + "  First Name  " + ColorConstant.RESET, centerStyle);

@@ -16,6 +16,7 @@ public class SAXParserHandler extends DefaultHandler {
     private User user = new User();
     private List<TaxType> taxList = new ArrayList<>();
     private TaxType tax = null;
+    private int idPayment;
 
 
     private String currentTagName;
@@ -31,19 +32,6 @@ public class SAXParserHandler extends DefaultHandler {
         switch (qName) {
             case XMLConstant.TAG_USER -> user = new User();
             case XMLConstant.TAG_TAXES -> taxList = new ArrayList<>();
-            case XMLConstant.TAG_TAX -> {
-                String idTax = attributes.getValue("idTax");
-
-                switch (idTax) {
-                    case "1" -> tax = new TaxTypeIncome();
-                    case "2" -> tax = new TaxTypePresent();
-                    case "3" -> tax = new TaxTypeRemuneration();
-                    case "4" -> tax = new TaxTypeSale();
-                    case "5" -> tax = new TaxTypeTransferFromAbroad();
-                    case "6" -> tax = new TaxTypeBenefitsForChildren();
-                    case "7" -> tax = new TaxTypeFinancialAid();
-                }
-            }
         }
 
     }
@@ -73,8 +61,34 @@ public class SAXParserHandler extends DefaultHandler {
             case XMLConstant.TAG_ID_USER -> user.setId(Integer.parseInt(new String(ch, start, length)));
             case XMLConstant.TAG_FIRST_NAME -> user.setFirstName(new String(ch, start, length));
             case XMLConstant.TAG_LAST_NAME -> user.setLastName(new String(ch, start, length));
+            case XMLConstant.TAG_SEX -> {
+                User.Sex gender = switch (new String(ch, start, length)) {
+                    case "male" -> User.Sex.male;
+                    case "female" -> User.Sex.female;
+                    default -> User.Sex.other;
+                };
+                user.setSex(gender);
+            }
             case XMLConstant.TAG_EMAIL -> user.setEmail(new String(ch, start, length));
-            case XMLConstant.TAG_TAX -> tax.setAmountOfTax(Double.parseDouble(new String(ch, start, length)));
+            case XMLConstant.TAG_DATE_OF_BIRTH -> user.setDateOfBirth(new String(ch, start, length));
+            case XMLConstant.TAG_TAX_ID -> {
+                switch (new String(ch, start, length)) {
+                    case "1" -> tax = new TaxTypeIncome();
+                    case "2" -> tax = new TaxTypePresent();
+                    case "3" -> tax = new TaxTypeRemuneration();
+                    case "4" -> tax = new TaxTypeSale();
+                    case "5" -> tax = new TaxTypeTransferFromAbroad();
+                    case "6" -> tax = new TaxTypeBenefitsForChildren();
+                    case "7" -> tax = new TaxTypeFinancialAid();
+                }
+
+                tax.setIdNumber(idPayment);
+            }
+            case XMLConstant.TAG_ID_PAYMENT -> idPayment = Integer.parseInt(new String(ch, start, length));
+            case XMLConstant.TAG_VALUE -> tax.setValue(Double.parseDouble(new String(ch, start, length)));
+            case XMLConstant.TAG_AMOUNT_OF_TAX -> tax.setAmountOfTax(Double.parseDouble(new String(ch, start, length)));
+            case XMLConstant.TAG_PAYMENT_DATE -> tax.setDatePayment(new String(ch, start, length));
+
         }
 
     }

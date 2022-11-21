@@ -1,5 +1,6 @@
 package com.panchuk.tax.dao.xml.util.sax_parser;
 
+import com.panchuk.tax.dao.xml.util.XMLValidation;
 import com.panchuk.tax.model.User;
 import org.xml.sax.SAXException;
 
@@ -14,6 +15,12 @@ public class SAXParser {
     private static final String FILE_PATH = "xml/user.xml";
 
     public List<User> parse() {
+
+        if (!XMLValidation.validateXMLSchema("xml/user.xsd", FILE_PATH)) {
+            System.out.println("\n\u274C Xml file is no valid!");
+            return null;
+        }
+
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParserHandler handler = new SAXParserHandler();

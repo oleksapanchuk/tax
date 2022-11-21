@@ -2,6 +2,7 @@ package com.panchuk.tax.util;
 
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.controller.TaxController;
+import com.panchuk.tax.menu.MainMenu;
 import com.panchuk.tax.model.TaxType;
 import com.panchuk.tax.model.User;
 import com.panchuk.tax.service.pretty_print.PrettyConsolePrinting;
@@ -118,7 +119,6 @@ public class Reader {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public static double inputDouble(String inputAim) {

@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class Validator {
 
-    private static DAOFactory daoFactory;
+    private static final DAOFactory daoFactory;
 
     static {
         try {

@@ -1,5 +1,7 @@
 package com.panchuk.tax.model;
 
+import java.util.Objects;
+
 public abstract class TaxType {
     protected int idNumber;
     protected int TYPE;
@@ -48,4 +50,16 @@ public abstract class TaxType {
 
     public void setDatePayment(String datePayment) { this.datePayment = datePayment; }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TaxType taxType = (TaxType) o;
+        return idNumber == taxType.idNumber && TYPE == taxType.TYPE && Double.compare(taxType.multiplier, multiplier) == 0 && Double.compare(taxType.value, value) == 0 && Double.compare(taxType.amountOfTax, amountOfTax) == 0 && Objects.equals(nameTax, taxType.nameTax) && Objects.equals(datePayment, taxType.datePayment);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idNumber, TYPE, nameTax, multiplier, value, amountOfTax, datePayment);
+    }
 }

@@ -11,4 +11,5 @@ public class TaxTypeIncome extends TaxType {
     }
 
     public int getType() { return TYPE; }
+
 }
