@@ -1,0 +1,6 @@
+2022-11-25 14:29:22 INFO  [main]: Program started!
+2022-11-25 14:29:45 INFO  [main]: Program started!
+2022-11-25 14:29:47 INFO  [main]: Program finished!
+2022-11-25 14:34:25 INFO  [main]: Program started!
+2022-11-25 14:34:36 INFO  [main]: UserUser{id=11, firstName='Богдан', lastName='Карасійчук', email='bodichkakar@gmail.com', sex=male, dateOfBirth='2004-12-01', taxes=[com.panchuk.tax.model.tax.TaxTypeTransferFromAbroad@9e369cc8, com.panchuk.tax.model.tax.TaxTypeBenefitsForChildren@7af96757, com.panchuk.tax.model.tax.TaxTypeRemuneration@c517f244]}
+2022-11-25 14:34:38 INFO  [main]: Program finished!

@@ -17,11 +17,5 @@ public class XMLConstant {
     public static final String TAG_AMOUNT_OF_TAX = "amount_of_tax";
     public static final String TAG_PAYMENT_DATE = "payment_date";
 
-
-    public static final String GET_ALL_USERS = "all_user";
-    public static final String GET_ALL_TAXES = "all_taxes";
-
-    public static final String GET_USER_BY_ID = "id-";
-
     private XMLConstant() { }
 }

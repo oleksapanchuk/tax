@@ -4,7 +4,7 @@ import com.panchuk.tax.DAOException;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.menu.MenuItem;
-import com.panchuk.tax.service.pretty_print.PrettyConsolePrinting;
+import com.panchuk.tax.util.PrettyConsolePrinting;
 import com.panchuk.tax.util.Reader;
 
 public class FindUserCommand implements MenuItem {
@@ -32,25 +32,25 @@ public class FindUserCommand implements MenuItem {
 
             String query = PARAM + switch (PARAM) {
                 case ProjectConstant.FIND_BY_FIRST_NAME ->
-                        Reader.inputString("Input first name to find: ", ProjectConstant.VALID_FIRST_NAME); //todo use like for finding
+                        Reader.inputString("Input first name to find: ", ProjectConstant.VALID_FIRST_NAME);
                 case ProjectConstant.FIND_BY_LAST_NAME ->
                         Reader.inputString("Input last name to find: ", ProjectConstant.VALID_LAST_NAME);
                 case ProjectConstant.FIND_BY_EMAIL ->
                         Reader.inputString("Input email name to find: ", ProjectConstant.VALID_EMAIL);
                 case ProjectConstant.SORT_BY_FIRST_NAME ->
-                        Reader.inputIsTrue("Do you want to sort first name by ascending order (\"yes\" or \"no\"): ") //todo
+                        Reader.inputIsTrue("Do you want to sort first name by ascending order (\"yes\" or \"no\"): ")
                                 ?
                                 "a"
                                 :
                                 "d";
                 case ProjectConstant.SORT_BY_LAST_NAME ->
-                        Reader.inputIsTrue("Do you want to sort last name by ascending order (\"yes\" or \"no\"): ") //todo
+                        Reader.inputIsTrue("Do you want to sort last name by ascending order (\"yes\" or \"no\"): ")
                                 ?
                                 "a"
                                 :
                                 "d";
                 case ProjectConstant.SORT_BY_AMOUNT ->
-                        Reader.inputIsTrue("Do you want to sort amount of tax by ascending order (\"yes\" or \"no\"): ") //todo
+                        Reader.inputIsTrue("Do you want to sort amount of tax by ascending order (\"yes\" or \"no\"): ")
                                 ?
                                 "a"
                                 :

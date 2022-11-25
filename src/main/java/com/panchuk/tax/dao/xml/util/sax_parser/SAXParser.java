@@ -12,15 +12,12 @@ import java.util.List;
 
 public class SAXParser {
 
-    private static final String FILE_PATH = "xml/user.xml";
+    public List<User> parse(String path) {
 
-    public List<User> parse() {
-
-        if (!XMLValidation.validateXMLSchema("xml/user.xsd", FILE_PATH)) {
+        if (!XMLValidation.validateXMLSchema("xml/user.xsd", path)) {
             System.out.println("\n\u274C Xml file is no valid!");
             return null;
         }
-
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParserHandler handler = new SAXParserHandler();
@@ -33,7 +30,7 @@ public class SAXParser {
             return null;
         }
 
-        File file = new File(FILE_PATH);
+        File file = new File(path);
         try {
             parser.parse(file, handler);
         } catch (SAXException e) {
@@ -44,13 +41,6 @@ public class SAXParser {
             return null;
         }
 
-
         return handler.getUserList();
-    }
-
-
-    public static void main(String[] args) {
-        SAXParser saxParser = new SAXParser();
-        System.out.println(saxParser.parse());
     }
 }

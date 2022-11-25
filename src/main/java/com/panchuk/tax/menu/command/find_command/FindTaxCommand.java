@@ -4,7 +4,7 @@ import com.panchuk.tax.DAOException;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.menu.MenuItem;
-import com.panchuk.tax.service.pretty_print.PrettyConsolePrinting;
+import com.panchuk.tax.util.PrettyConsolePrinting;
 import com.panchuk.tax.util.Reader;
 
 public class FindTaxCommand implements MenuItem {
@@ -43,7 +43,7 @@ public class FindTaxCommand implements MenuItem {
                 }
                 case ProjectConstant.FIND_BY_RANGE -> {
                     query += Reader.inputDouble("Input set start of range: ");
-                    query += "-" + Reader.inputDouble("Input set start of range: ");
+                    query += "-" + Reader.inputDouble("Input set end of range: ");
                     PrettyConsolePrinting.printTaxList(daoFactory.getTaxDAO().findTaxByFilter(query), true);
                 }
             }

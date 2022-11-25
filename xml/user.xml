@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xml/user.xsd">
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="user.xsd">
     <user>
         <id_user>11</id_user>
         <first_name>Богдан</first_name>
@@ -38,6 +38,48 @@
         <sex>male</sex>
         <email>ollgdfg_fdf@fdf.sd</email>
         <date_of_birth>2000-02-02</date_of_birth>
+        <taxes/>
+    </user>
+    <user>
+        <id_user>107116</id_user>
+        <first_name>Hd</first_name>
+        <last_name>NA</last_name>
+        <sex>male</sex>
+        <email>LFDW@off.dfd</email>
+        <date_of_birth>2000-03-03</date_of_birth>
+        <taxes/>
+    </user>
+    <user>
+        <id_user>970948</id_user>
+        <first_name>Gran</first_name>
+        <last_name>Barnum</last_name>
+        <sex>male</sex>
+        <email>abrabak@gmail.com</email>
+        <date_of_birth>2004-01-12</date_of_birth>
+        <taxes>
+            <tax>
+                <id_payment>421</id_payment>
+                <tax_id>3</tax_id>
+                <value>1117.0988999999997</value>
+                <amount_of_tax>3723.6629999999996</amount_of_tax>
+                <payment_date>2022-04-21</payment_date>
+            </tax>
+            <tax>
+                <id_payment>3</id_payment>
+                <tax_id>2</tax_id>
+                <value>97.70222249999999</value>
+                <amount_of_tax>651.3481499999999</amount_of_tax>
+                <payment_date>2002-05-23</payment_date>
+            </tax>
+        </taxes>
+    </user>
+    <user>
+        <id_user>273216</id_user>
+        <first_name>Marsik</first_name>
+        <last_name>Cotovich</last_name>
+        <sex>other</sex>
+        <email>mauuuuuyy@gmail.mur</email>
+        <date_of_birth>2000-03-04</date_of_birth>
         <taxes/>
     </user>
 </root>

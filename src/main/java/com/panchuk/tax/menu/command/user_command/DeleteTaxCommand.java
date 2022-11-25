@@ -5,7 +5,7 @@ import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.menu.MenuItem;
 import com.panchuk.tax.model.User;
-import com.panchuk.tax.service.pretty_print.PrettyConsolePrinting;
+import com.panchuk.tax.util.PrettyConsolePrinting;
 import com.panchuk.tax.util.Reader;
 
 public class DeleteTaxCommand implements MenuItem {
@@ -32,15 +32,12 @@ public class DeleteTaxCommand implements MenuItem {
         try {
 
             PrettyConsolePrinting.printString("DELETE TAX");
-            int idNumber = Reader.inputIdUser("Input id number of tax for delete: ", ProjectConstant.VALID_ID_NUMBER);
 
-            if (daoFactory.getTaxDAO().deleteUserTax(idNumber)){
+            if (daoFactory.getTaxDAO().deleteUserTax(Reader.inputIdPayment())) {
                 System.out.println(ProjectConstant.EMO_GREEN_CHECKBOX + " Tax was deleted successfully!\n");
             }
 
-
             PrettyConsolePrinting.printUser(daoFactory.getTaxDAO().getUser(user.getId()));
-
 
         } catch (DAOException e) {
             throw new RuntimeException(e);

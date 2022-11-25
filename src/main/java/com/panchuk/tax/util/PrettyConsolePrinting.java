@@ -1,4 +1,4 @@
-package com.panchuk.tax.service.pretty_print;
+package com.panchuk.tax.util;
 
 import com.panchuk.tax.constant.ColorConstant;
 import com.panchuk.tax.constant.ProjectConstant;
@@ -64,8 +64,8 @@ public class PrettyConsolePrinting {
             table.addCell(ColorConstant.WHITE_BRIGHT + tax.getIdNumber() + ColorConstant.RESET, centerStyle);
             table.addCell(ColorConstant.WHITE_BRIGHT + " " + tax.getType() + " " + ColorConstant.RESET, centerStyle);
             table.addCell(ColorConstant.WHITE_BRIGHT + " " + tax.getNameTax() + " " + ColorConstant.RESET);
-            table.addCell(ColorConstant.WHITE_BRIGHT + " " + tax.getValue() + " " + ColorConstant.RESET, centerStyle);
-            table.addCell(ColorConstant.WHITE_BRIGHT + " " + tax.getAmountOfTax() + " " + ColorConstant.RESET, centerStyle);
+            table.addCell(ColorConstant.WHITE_BRIGHT + " " + String.format("%.5f", tax.getValue()) + " " + ColorConstant.RESET, centerStyle);
+            table.addCell(ColorConstant.WHITE_BRIGHT + " " + String.format("%.5f", tax.getAmountOfTax()) + " " + ColorConstant.RESET, centerStyle);
             table.addCell(ColorConstant.WHITE_BRIGHT + " " + tax.getDatePayment() + " " + ColorConstant.RESET, centerStyle);
         }
 

@@ -5,7 +5,7 @@ import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.menu.MenuItem;
 import com.panchuk.tax.model.User;
-import com.panchuk.tax.service.pretty_print.PrettyConsolePrinting;
+import com.panchuk.tax.util.PrettyConsolePrinting;
 import com.panchuk.tax.util.Reader;
 
 public class UpdateUserCommand implements MenuItem {

@@ -29,7 +29,7 @@ public class XMLWriter {
         // root elements
         Element rootElement = doc.createElement("root");
         rootElement.setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
-        rootElement.setAttribute("xsi:noNamespaceSchemaLocation", "../xml/user.xsd");
+        rootElement.setAttribute("xsi:noNamespaceSchemaLocation", "user.xsd");
         doc.appendChild(rootElement);
 
 

@@ -62,4 +62,15 @@ public abstract class TaxType {
     public int hashCode() {
         return Objects.hash(idNumber, TYPE, nameTax, multiplier, value, amountOfTax, datePayment);
     }
+
+    @Override
+    public String toString() {
+        return "TaxType{" +
+                "idNumber=" + idNumber +
+                ", TYPE=" + TYPE +
+                ", value=" + value +
+                ", amountOfTax=" + amountOfTax +
+                ", datePayment='" + datePayment + '\'' +
+                '}';
+    }
 }

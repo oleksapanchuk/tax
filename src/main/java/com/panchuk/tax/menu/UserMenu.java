@@ -3,7 +3,7 @@ package com.panchuk.tax.menu;
 import com.panchuk.tax.menu.command.*;
 import com.panchuk.tax.menu.command.user_command.*;
 import com.panchuk.tax.model.User;
-import com.panchuk.tax.service.pretty_print.PrettyConsolePrinting;
+import com.panchuk.tax.util.PrettyConsolePrinting;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

@@ -3,9 +3,8 @@ package com.panchuk.tax.menu;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.menu.command.ExitCommand;
 import com.panchuk.tax.menu.command.find_command.FindTaxCommand;
-import com.panchuk.tax.menu.command.find_command.FindUserCommand;
 import com.panchuk.tax.menu.command.user_command.ExitToMainMenuCommand;
-import com.panchuk.tax.service.pretty_print.PrettyConsolePrinting;
+import com.panchuk.tax.util.PrettyConsolePrinting;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

@@ -12,9 +12,10 @@ public class User {
     private double totalAmountOfTax;
     private List<TaxType> taxes;
 
-    public User() {}
+    public User() {
+    }
 
-    public User(int id, String firstName, String lastName, Sex sex,String email, String dateOfBirth) {
+    public User(int id, String firstName, String lastName, Sex sex, String email, String dateOfBirth) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -59,9 +60,13 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Sex getSex() { return sex; }
+    public Sex getSex() {
+        return sex;
+    }
 
-    public void setSex(Sex sex) { this.sex = sex; }
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
 
     public String getEmail() {
         return email;
@@ -71,13 +76,21 @@ public class User {
         this.email = email;
     }
 
-    public String getDateOfBirth() { return dateOfBirth; }
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
 
-    public void setDateOfBirth(String dateOfBirth) { this.dateOfBirth = dateOfBirth; }
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
-    public double getTotalAmountOfTax() { return totalAmountOfTax; }
+    public double getTotalAmountOfTax() {
+        return totalAmountOfTax;
+    }
 
-    public void setTotalAmountOfTax(double totalAmountOfTax) { this.totalAmountOfTax = totalAmountOfTax; }
+    public void setTotalAmountOfTax(double totalAmountOfTax) {
+        this.totalAmountOfTax = totalAmountOfTax;
+    }
 
     public List<TaxType> getTax() {
         return taxes;
@@ -114,7 +127,6 @@ public class User {
                 ", taxes=" + taxes +
                 '}';
     }
-
 
 
     public enum Sex {

@@ -1,6 +1,7 @@
 package com.panchuk.tax.dao.mysql;
 
 import com.panchuk.tax.DAOException;
+import com.panchuk.tax.Main;
 import com.panchuk.tax.constant.ColorConstant;
 import com.panchuk.tax.constant.DBConstant;
 import com.panchuk.tax.constant.ProjectConstant;
@@ -9,7 +10,9 @@ import com.panchuk.tax.dao.mysql.util.DBCPDataSource;
 import com.panchuk.tax.model.TaxType;
 import com.panchuk.tax.model.User;
 import com.panchuk.tax.model.tax.*;
+import com.panchuk.tax.util.EmailSender;
 import com.panchuk.tax.util.Reader;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,8 +22,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MysqlTaxDAO implements TaxDAO {
+
+    static final Logger logger = Logger.getLogger(Main.class);
+
     @Override
-    public boolean insertUser(User user) throws DAOException {
+    public boolean insertUser(User user) {
+
+        logger.info("Starting user insertion " + user);
 
         try (Connection con = DBCPDataSource.getConnection();
              PreparedStatement ps = con.prepareStatement(DBConstant.INSERT_USER, PreparedStatement.RETURN_GENERATED_KEYS)) {
@@ -44,7 +52,13 @@ public class MysqlTaxDAO implements TaxDAO {
             }
 
         } catch (SQLException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
 
         return false;
@@ -65,14 +79,22 @@ public class MysqlTaxDAO implements TaxDAO {
                 }
             }
         } catch (SQLException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
 
         return null;
     }
 
     @Override
-    public List<TaxType> getUserTaxes(int id) throws DAOException {
+    public List<TaxType> getUserTaxes(int id) {
+
+        logger.info("get user taxes");
 
         List<TaxType> taxList = new ArrayList<>();
 
@@ -95,12 +117,23 @@ public class MysqlTaxDAO implements TaxDAO {
             return taxList;
 
         } catch (SQLException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
+        return null;
     }
 
     @Override
-    public boolean addTaxForUser(User user, List<TaxType> taxes) throws DAOException {
+    public boolean addTaxForUser(User user, List<TaxType> taxes) {
+
+        logger.info("add tax for user");
+        logger.info("user - " + user);
+        logger.info("taxes - " + taxes);
 
         Connection con = null;
 
@@ -135,7 +168,7 @@ public class MysqlTaxDAO implements TaxDAO {
                 try {
                     con.rollback();
                 } catch (SQLException ex) {
-                    throw new DAOException(ex);
+                    logger.error(ex);
                 }
             }
         } finally {
@@ -143,7 +176,7 @@ public class MysqlTaxDAO implements TaxDAO {
                 try {
                     con.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    logger.error(e);
                 }
             }
         }
@@ -152,7 +185,9 @@ public class MysqlTaxDAO implements TaxDAO {
     }
 
     @Override
-    public boolean updateUser(User user) throws DAOException {
+    public boolean updateUser(User user) {
+
+        logger.info("updating user " + user);
 
         try (Connection con = DBCPDataSource.getConnection();
              PreparedStatement ps = con.prepareStatement(DBConstant.UPDATE_USER)) {
@@ -167,14 +202,22 @@ public class MysqlTaxDAO implements TaxDAO {
             if (amountRows >= 1) return true;
 
         } catch (SQLException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
 
         return false;
     }
 
     @Override
-    public boolean deleteUser(User user) throws DAOException {
+    public boolean deleteUser(User user) {
+
+        logger.info("deleting user " + user);
 
         Connection con = null;
         try {
@@ -200,13 +243,19 @@ public class MysqlTaxDAO implements TaxDAO {
 
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
             if (con != null) {
                 try {
                     con.rollback();
                     return false;
                 } catch (SQLException ex) {
-                    throw new DAOException(ex);
+                    logger.error(ex);
                 }
             }
         } finally {
@@ -214,7 +263,7 @@ public class MysqlTaxDAO implements TaxDAO {
                 try {
                     con.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    logger.error(e);
                 }
             }
         }
@@ -222,7 +271,9 @@ public class MysqlTaxDAO implements TaxDAO {
     }
 
     @Override
-    public boolean deleteUserTax(int idNumberTax) throws DAOException {
+    public boolean deleteUserTax(int idNumberTax) {
+
+        logger.info("deleting users tax");
 
         try (Connection con = DBCPDataSource.getConnection();
              PreparedStatement ps = con.prepareStatement(DBConstant.DELETE_TAX)) {
@@ -234,7 +285,13 @@ public class MysqlTaxDAO implements TaxDAO {
             if (amountRows == 1) return true;
 
         } catch (SQLException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
 
         return false;
@@ -251,13 +308,22 @@ public class MysqlTaxDAO implements TaxDAO {
             if (amountRows >= 0) return true;
 
         } catch (SQLException e) {
-            throw new SQLException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
 
         return false;
     }
 
     private User createUser(ResultSet rs) throws SQLException, DAOException {
+
+        logger.info("creating user by resultSet result");
+
         User user = new User(
                 rs.getInt(1),
                 rs.getString(2),
@@ -298,7 +364,9 @@ public class MysqlTaxDAO implements TaxDAO {
     }
 
     @Override
-    public List<TaxType> findTaxByFilter(String query) throws DAOException {
+    public List<TaxType> findTaxByFilter(String query) {
+
+        logger.info("find tax by filter method");
 
         try (Connection con = DBCPDataSource.getConnection()) {
 
@@ -327,12 +395,21 @@ public class MysqlTaxDAO implements TaxDAO {
             return null;
 
         } catch (SQLException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
+        return null;
     }
 
 
     private List<TaxType> findTaxById(Connection con, int id) throws SQLException {
+
+        logger.info("find tax by id method");
 
         List<TaxType> taxList = new ArrayList<>();
 
@@ -353,6 +430,8 @@ public class MysqlTaxDAO implements TaxDAO {
 
     private List<TaxType> findTaxType(Connection con, int type, boolean isSortByDate, boolean isAsc) throws SQLException {
 
+        logger.info("find tax info method");
+
         String query = DBConstant.GET_TAX_BY_TYPE_AND_SORT;
 
         List<TaxType> taxList = new ArrayList<>();
@@ -372,6 +451,8 @@ public class MysqlTaxDAO implements TaxDAO {
 
     private List<TaxType> findTaxRange(Connection con, double start, double finish) throws SQLException {
 
+        logger.info("find tax method");
+
         List<TaxType> taxList = new ArrayList<>();
 
         try (PreparedStatement ps = con.prepareStatement(DBConstant.GET_TAX_BY_RANGE)) {
@@ -384,6 +465,9 @@ public class MysqlTaxDAO implements TaxDAO {
     }
 
     private List<TaxType> getTaxTypes(List<TaxType> taxList, PreparedStatement ps) throws SQLException {
+
+        logger.info("get tax type method");
+
         ps.execute();
 
         try (ResultSet rs = ps.getResultSet()) {
@@ -436,9 +520,14 @@ public class MysqlTaxDAO implements TaxDAO {
             }
 
         } catch (SQLException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
-
         return null;
     }
 
@@ -457,11 +546,19 @@ public class MysqlTaxDAO implements TaxDAO {
 
             return userList;
         } catch (SQLException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
+
+        return null;
     }
 
-    private List<User> findByIdNumber(Connection con, int id) throws DAOException {
+    private List<User> findByIdNumber(Connection con, int id) {
 
         List<User> userList = new ArrayList<>();
 
@@ -478,11 +575,18 @@ public class MysqlTaxDAO implements TaxDAO {
 
             return userList;
         } catch (SQLException | DAOException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
+        return null;
     }
 
-    private List<User> findByString(Connection con, String findType, String text) throws DAOException {
+    private List<User> findByString(Connection con, String findType, String text)  {
 
         List<User> userList = new ArrayList<>();
 
@@ -499,11 +603,20 @@ public class MysqlTaxDAO implements TaxDAO {
 
             return userList;
         } catch (SQLException | DAOException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
+        return null;
     }
 
-    private List<User> sortUserByString(Connection con, String query, boolean isAsc) throws DAOException {
+    private List<User> sortUserByString(Connection con, String query, boolean isAsc) {
+
+        logger.info("sorting user by param");
 
         if (!isAsc) query += " desc";
 
@@ -521,12 +634,20 @@ public class MysqlTaxDAO implements TaxDAO {
 
             return userList;
         } catch (SQLException | DAOException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
-
+        return null;
     }
 
-    private List<User> sortUserByAmount(Connection con, boolean isAsc) throws DAOException {
+    private List<User> sortUserByAmount(Connection con, boolean isAsc) {
+
+        logger.info("sorting by total amount of tax");
 
         String query = DBConstant.SORT_USER_BY_TOTAL_AMOUNT_OF_TAX;
         if (!isAsc) query += " desc";
@@ -547,9 +668,15 @@ public class MysqlTaxDAO implements TaxDAO {
 
             return userList;
         } catch (SQLException | DAOException e) {
-            throw new DAOException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
-
+        return null;
     }
 
 }

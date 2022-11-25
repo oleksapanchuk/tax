@@ -2,17 +2,13 @@ package com.panchuk.tax.util;
 
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.controller.TaxController;
-import com.panchuk.tax.menu.MainMenu;
 import com.panchuk.tax.model.TaxType;
 import com.panchuk.tax.model.User;
-import com.panchuk.tax.service.pretty_print.PrettyConsolePrinting;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class Reader {
@@ -20,10 +16,17 @@ public class Reader {
     private static final Scanner scanner;
     private static final BufferedReader bf;
 
+    private static final Map<Integer, User.Sex> gender;
+
     static {
         scanner = new Scanner(System.in);
 
         bf = new BufferedReader(new InputStreamReader(System.in));
+
+        gender = new HashMap<>();
+        gender.put(1, User.Sex.male);
+        gender.put(2, User.Sex.female);
+        gender.put(3, User.Sex.other);
     }
 
     public static String inputMenuCommand(String menu) {
@@ -54,6 +57,9 @@ public class Reader {
 
     public static User.Sex inputSex(String inputAim) {
 
+        System.out.println("Gender Type: ");
+        System.out.println("\t-- 1. male\n\t-- 2. female\n\t-- 3. other");
+
         System.out.print("\u2712 " + inputAim);
 
         try {
@@ -61,22 +67,20 @@ public class Reader {
 
             while (true) {
 
-                inputData = Integer.parseInt(bf.readLine().trim());
-
-                switch (inputData) {
-                    case 1 -> {
-                        return User.Sex.male;
-                    }
-                    case 2 -> {
-                        return User.Sex.female;
-                    }
-                    case 3 ->{
-                        return User.Sex.other;
-                    }
+                try {
+                    inputData = Integer.parseInt(bf.readLine().trim());
+                } catch (NumberFormatException e) {
+                    System.out.println("\u26D4 Entered data is not number. Try again!");
+                    System.out.print("\u2712 " + inputAim);
+                    continue;
                 }
 
+                if (gender.containsKey(inputData)) return gender.get(inputData);
+
                 System.out.println(ProjectConstant.TEXT_WENT_WRONG);
+
             }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -84,20 +88,12 @@ public class Reader {
 
     public static int inputIdUser(String inputAim, Pattern pattern) {
 
-        System.out.print("\u2712 " + inputAim);
+        while (true) {
 
-        try {
-            int inputData;
+            int inputData = inputInt(inputAim);
 
-            while (true) {
-
-                inputData = Integer.parseInt(bf.readLine().trim());
-
-                if (Validator.validationIdNumber(inputData, pattern)) return inputData;
-                else System.out.print("Input correct id number: ");
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            if (Validator.validationIdNumber(inputData, pattern)) return inputData;
+            else System.out.println("\u26D4 Entered value is incorrect!");
         }
 
     }
@@ -168,9 +164,8 @@ public class Reader {
         int counter = 0;
         while (true) {
 
-            if (counter > 0) {
+            if (counter++ > 0) {
                 if (!inputIsTrue("Do you want to add one more tax (\"yes\" or \"no\"): ")) return taxList;
-                else System.out.println(ProjectConstant.TEXT_INCORRECT_VALUE);
             }
 
             PrettyConsolePrinting.printString("CREATION TAX");
@@ -179,9 +174,8 @@ public class Reader {
                     inputIdPayment(),
                     inputTaxType(),
                     inputPositiveDouble(),
-                    inputString("Input date of payment: ", ProjectConstant.VALID_DATE)));
+                    inputString("Input date of payment (YYYY-MM-DD): ", ProjectConstant.VALID_DATE)));
 
-            counter++;
         }
 
     }
@@ -189,7 +183,19 @@ public class Reader {
     public static int inputTaxType() {
         int type;
         while (true) {
-            type = inputInt("Input the type of tax: ");
+            type = inputInt("Input the type of tax (print \"10\" for info): ");
+            if (type == 10) {
+                System.out.println("""
+                        Type of Tax:
+                        \t\t1. Податок на дохід з основного та додаткового місць роботи
+                        \t\t2. Податок на подарунки
+                        \t\t3. Податок на авторські винагороди
+                        \t\t4. Податок на продаж майна
+                        \t\t5. Податок на перекази з-за кордону
+                        \t\t6. Податок пільг на дітей
+                        \t\t7. Податок на матеріальну допомогу""");
+                type = inputInt("Input the type of tax: ");
+            }
             if (type <= 0 || type > 7) System.out.print("Entered type is wrong.\n");
             else break;
         }
