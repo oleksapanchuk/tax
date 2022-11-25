@@ -1,12 +1,15 @@
 package com.panchuk.tax.util;
 
 
+import org.apache.log4j.Logger;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class EmailSender {
+    static final Logger logger = Logger.getLogger(EmailSender.class);
 
     public static void sendMessage(String error) throws Exception{
 
@@ -37,7 +40,8 @@ public class EmailSender {
         };
 
         Session session = Session.getDefaultInstance(properties,auth);
-        System.out.println("Session created");
+
+        logger.info("Session created");
 
         MimeMessage message = new MimeMessage(session);
 
@@ -55,8 +59,8 @@ public class EmailSender {
 
         message.setRecipient(Message.RecipientType.TO,new InternetAddress("alexanderpanchuk@ukr.net"));
         Transport.send(message);
-        System.out.println("Message was sent successfully...");
 
+        logger.info("Message was sent successfully");
     }
 
 }

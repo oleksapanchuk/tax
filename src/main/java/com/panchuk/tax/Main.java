@@ -15,6 +15,5 @@ public class Main {
         while (true) {
             mainMenu.execute(inputMenuCommand(mainMenu.toString()));
         }
-
     }
 }

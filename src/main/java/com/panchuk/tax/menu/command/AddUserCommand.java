@@ -1,12 +1,11 @@
 package com.panchuk.tax.menu.command;
 
 import com.panchuk.tax.DAOException;
-import com.panchuk.tax.Main;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.menu.MenuItem;
 import com.panchuk.tax.model.User;
-import com.panchuk.tax.util.EmailSender;
+import com.panchuk.tax.util.LoggerController;
 import com.panchuk.tax.util.PrettyConsolePrinting;
 import com.panchuk.tax.util.Reader;
 import org.apache.log4j.Logger;
@@ -14,24 +13,23 @@ import org.apache.log4j.Logger;
 
 public class AddUserCommand implements MenuItem {
 
-    private static final DAOFactory daoFactory;
+    static final Logger logger = Logger.getLogger(AddUserCommand.class);
+
+    private static DAOFactory daoFactory;
 
     static {
         try {
             DAOFactory.setDAOFactoryFQN(ProjectConstant.DAO_FACTORY_FQN);
             daoFactory = DAOFactory.getInstance();
         } catch (Exception e) {
-            throw new RuntimeException("Error is instantiating DAOFactory.", e);
+            LoggerController.daoInstantiatingException(e, AddUserCommand.class);
         }
     }
-
-    static final Logger logger = Logger.getLogger(Main.class);
-
 
     @Override
     public void execute() {
 
-        logger.info("creation user command");
+        logger.info("Execute \"Create User\" Command");
 
         PrettyConsolePrinting.printString("CREATION USER");
 
@@ -45,25 +43,28 @@ public class AddUserCommand implements MenuItem {
 
         try {
             if (daoFactory.getTaxDAO().insertUser(user)) {
+                logger.info("User was added successfully!");
                 System.out.println(ProjectConstant.EMO_GREEN_CHECKBOX + " User was added successfully!\n");
             }
 
+        } catch (DAOException e) {
+            LoggerController.daoException(e, AddUserCommand.class);
+        }
+
+        try {
+
             if (Reader.inputIsTrue("Do you want to add tax (\"yes\" or \"no\"): ")) {
                 if (daoFactory.getTaxDAO().addTaxForUser(user, Reader.inputTax())) {
+                    logger.info("Taxes were added successfully!");
                     System.out.println(ProjectConstant.EMO_GREEN_CHECKBOX + " Taxes were added successfully!\n");
                 }
             }
 
         } catch (DAOException e) {
-            try {
-                EmailSender.sendMessage(e.toString());
-            } catch (Exception ex) {
-                logger.error(ex);
-            }
-            logger.error(e);
-            System.out.println("\u26D4 Failed!");
+            LoggerController.daoException(e, AddUserCommand.class);
         }
 
+        logger.info("End execution \"Create User\" Command");
     }
 
     @Override

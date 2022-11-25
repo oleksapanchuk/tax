@@ -1,6 +1,5 @@
 package com.panchuk.tax.util;
 
-import com.panchuk.tax.Main;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.controller.TaxController;
 import com.panchuk.tax.model.TaxType;
@@ -14,11 +13,9 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class Reader {
-
+    static final Logger logger = Logger.getLogger(Reader.class);
     private static final Scanner scanner;
     private static final BufferedReader bf;
-
-    static final Logger logger = Logger.getLogger(Main.class);
 
     private static final Map<Integer, User.Sex> gender;
 
@@ -34,6 +31,7 @@ public class Reader {
     }
 
     public static String inputMenuCommand(String menu) {
+        logger.info("inputMenuCommand started");
         System.out.print(menu);
         System.out.print("\u21AA ");
         return scanner.nextLine();
@@ -55,13 +53,7 @@ public class Reader {
                 else System.out.print("Input correct id number: ");
             }
         } catch (IOException e) {
-            try {
-                EmailSender.sendMessage(e.toString());
-            } catch (Exception ex) {
-                logger.error(ex);
-            }
-            logger.error(e);
-            System.out.println("\u26D4 Failed!");
+            LoggerController.inputException(e);
         }
         return false;
     }
@@ -93,13 +85,7 @@ public class Reader {
             }
 
         } catch (IOException e) {
-            try {
-                EmailSender.sendMessage(e.toString());
-            } catch (Exception ex) {
-                logger.error(ex);
-            }
-            logger.error(e);
-            System.out.println("\u26D4 Failed!");
+            LoggerController.inputException(e);
         }
         return null;
     }
@@ -131,13 +117,7 @@ public class Reader {
                 else System.out.print(ProjectConstant.TEXT_WENT_WRONG);
             }
         } catch (IOException e) {
-            try {
-                EmailSender.sendMessage(e.toString());
-            } catch (Exception ex) {
-                logger.error(ex);
-            }
-            logger.error(e);
-            System.out.println("\u26D4 Failed!");
+            LoggerController.inputException(e);
         }
         return 0;
     }
@@ -157,13 +137,7 @@ public class Reader {
                 else System.out.print("Input correct id number: ");
             }
         } catch (IOException e) {
-            try {
-                EmailSender.sendMessage(e.toString());
-            } catch (Exception ex) {
-                logger.error(ex);
-            }
-            logger.error(e);
-            System.out.println("\u26D4 Failed!");
+            LoggerController.inputException(e);
         }
         return 0;
     }
@@ -177,19 +151,13 @@ public class Reader {
 
             while (true) {
 
-                    inputData = bf.readLine().trim();
+                inputData = bf.readLine().trim();
 
                 if (Validator.validationString(inputData, pattern)) return inputData;
                 else System.out.print("Input valid value: ");
             }
         } catch (IOException e) {
-            try {
-                EmailSender.sendMessage(e.toString());
-            } catch (Exception ex) {
-                logger.error(ex);
-            }
-            logger.error(e);
-            System.out.println("\u26D4 Failed!");
+            LoggerController.inputException(e);
         }
         return null;
     }

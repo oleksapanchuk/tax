@@ -7,16 +7,15 @@ import org.apache.log4j.Logger;
 
 public class ExitToMainMenuCommand implements MenuItem {
 
-    static final Logger logger = Logger.getLogger(Main.class);
+    static final Logger logger = Logger.getLogger(ExitToMainMenuCommand.class);
 
     @Override
     public void execute() {
+        logger.info("Execute \"Exit To Main Menu\" Command");
+
         Main.main(new String[]{});
     }
 
     @Override
-    public String toString() {
-        logger.info("back to main menu command");
-        return ProjectConstant.EMO_BACK_MAIN_MENU + " Main Menu";
-    }
+    public String toString() { return ProjectConstant.EMO_BACK_MAIN_MENU + " Main Menu"; }
 }

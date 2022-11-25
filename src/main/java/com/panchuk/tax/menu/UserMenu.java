@@ -4,11 +4,13 @@ import com.panchuk.tax.menu.command.*;
 import com.panchuk.tax.menu.command.user_command.*;
 import com.panchuk.tax.model.User;
 import com.panchuk.tax.util.PrettyConsolePrinting;
+import org.apache.log4j.Logger;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class UserMenu {
+    static final Logger logger = Logger.getLogger(UserMenu.class);
     private final Map<String, MenuItem> userItems;
 
     public UserMenu(User user) {
@@ -22,6 +24,7 @@ public class UserMenu {
     }
 
     public void execute(String command) {
+        logger.info("Execute \"User Menu\"");
         userItems.getOrDefault(command, () -> System.out.println("\uD83D\uDDF2 Incorrect command! Try again!!!\n")).execute();
     }
 

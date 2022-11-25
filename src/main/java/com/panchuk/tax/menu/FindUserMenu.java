@@ -5,11 +5,14 @@ import com.panchuk.tax.menu.command.*;
 import com.panchuk.tax.menu.command.find_command.FindUserCommand;
 import com.panchuk.tax.menu.command.user_command.ExitToMainMenuCommand;
 import com.panchuk.tax.util.PrettyConsolePrinting;
+import org.apache.log4j.Logger;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FindUserMenu {
+    static final Logger logger = Logger.getLogger(FindUserMenu.class);
+
     private final Map<String, MenuItem> menuItems;
 
     public FindUserMenu() {
@@ -25,6 +28,7 @@ public class FindUserMenu {
     }
 
     public void execute(String command) {
+        logger.info("Execute \"Find User Menu\"");
         menuItems.getOrDefault(command, () -> System.out.println("\uD83D\uDDF2 Incorrect command! Try again!!!\n")).execute();
     }
 

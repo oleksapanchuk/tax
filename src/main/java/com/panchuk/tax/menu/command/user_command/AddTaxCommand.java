@@ -1,12 +1,13 @@
 package com.panchuk.tax.menu.command.user_command;
 
 import com.panchuk.tax.DAOException;
-import com.panchuk.tax.Main;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.menu.MenuItem;
 import com.panchuk.tax.model.TaxType;
 import com.panchuk.tax.model.User;
+import com.panchuk.tax.util.EmailSender;
+import com.panchuk.tax.util.LoggerController;
 import com.panchuk.tax.util.PrettyConsolePrinting;
 import com.panchuk.tax.util.Reader;
 import org.apache.log4j.Logger;
@@ -17,8 +18,8 @@ public class AddTaxCommand implements MenuItem {
 
     private final User user;
 
-    private static final DAOFactory daoFactory;
-    static final Logger logger = Logger.getLogger(Main.class);
+    private static DAOFactory daoFactory;
+    static final Logger logger = Logger.getLogger(AddTaxCommand.class);
 
 
     static {
@@ -26,7 +27,7 @@ public class AddTaxCommand implements MenuItem {
             DAOFactory.setDAOFactoryFQN(ProjectConstant.DAO_FACTORY_FQN);
             daoFactory = DAOFactory.getInstance();
         } catch (Exception e) {
-            throw new RuntimeException("Error is instantiating DAOFactory.", e);
+            LoggerController.daoInstantiatingException(e, AddTaxCommand.class);
         }
     }
 
@@ -37,12 +38,13 @@ public class AddTaxCommand implements MenuItem {
     @Override
     public void execute() {
 
-        logger.info("adding tax command");
+        logger.info("Execute \"Add Tax\" Command");
 
         List<TaxType> taxes = Reader.inputTax();
 
 
         if (taxes == null || taxes.size() == 0) {
+            logger.warn("You do not add any tax or something went wrong!");
             System.out.println("You do not add any tax or something went wrong!");
             return;
         }
@@ -61,9 +63,10 @@ public class AddTaxCommand implements MenuItem {
             PrettyConsolePrinting.printUser(daoFactory.getTaxDAO().getUser(user.getId()));
 
         } catch (DAOException e) {
-            throw new RuntimeException(e);
+            LoggerController.daoException(e, AddTaxCommand.class);
+            return;
         }
-
+        logger.info("End execution \"Add Tax\" Command");
     }
 
     @Override

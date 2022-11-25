@@ -1,30 +1,29 @@
 package com.panchuk.tax.menu.command.user_command;
 
 import com.panchuk.tax.DAOException;
-import com.panchuk.tax.Main;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.menu.MenuItem;
 import com.panchuk.tax.model.User;
-import com.panchuk.tax.util.EmailSender;
+import com.panchuk.tax.util.LoggerController;
 import com.panchuk.tax.util.PrettyConsolePrinting;
 import com.panchuk.tax.util.Reader;
 import org.apache.log4j.Logger;
 
 public class DeleteTaxCommand implements MenuItem {
 
+    static final Logger logger = Logger.getLogger(DeleteTaxCommand.class);
+
     private final User user;
 
-    static final Logger logger = Logger.getLogger(Main.class);
-
-    private static final DAOFactory daoFactory;
+    private static DAOFactory daoFactory;
 
     static {
         try {
             DAOFactory.setDAOFactoryFQN(ProjectConstant.DAO_FACTORY_FQN);
             daoFactory = DAOFactory.getInstance();
         } catch (Exception e) {
-            throw new RuntimeException("Error is instantiating DAOFactory.", e);
+            LoggerController.daoInstantiatingException(e, DeleteTaxCommand.class);
         }
     }
 
@@ -35,7 +34,7 @@ public class DeleteTaxCommand implements MenuItem {
     @Override
     public void execute() {
 
-        logger.info("deleting tax command");
+        logger.info("Execute \"Delete Tax\" Command");
 
         try {
 
@@ -48,13 +47,7 @@ public class DeleteTaxCommand implements MenuItem {
             PrettyConsolePrinting.printUser(daoFactory.getTaxDAO().getUser(user.getId()));
 
         } catch (DAOException e) {
-            try {
-                EmailSender.sendMessage(e.toString());
-            } catch (Exception ex) {
-                logger.error(ex);
-            }
-            logger.error(e);
-            System.out.println("\u26D4 Failed!");
+            LoggerController.daoException(e, DeleteTaxCommand.class);
         }
     }
 

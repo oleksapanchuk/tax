@@ -57,7 +57,9 @@ public class XMLTaxDAO implements TaxDAO {
         List<User> userList = findUserByFilter(ProjectConstant.FIND_ALL_USERS);
         for (int i = 0; i < userList.size(); i++) {
             if (userList.get(i).equals(user)) {
-                userList.get(i).setTax(taxes);
+                List<TaxType> taxesList = userList.get(i).getTax();
+                taxesList.addAll(taxes);
+                userList.get(i).setTax(taxesList);
                 XMLWriter.buildXML(userList, ProjectConstant.writeXMLPath);
                 logger.info("User taxes added" + user);
                 return true;

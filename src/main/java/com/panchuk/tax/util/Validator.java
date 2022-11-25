@@ -1,7 +1,6 @@
 package com.panchuk.tax.util;
 
 import com.panchuk.tax.DAOException;
-import com.panchuk.tax.Main;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.model.TaxType;
@@ -13,23 +12,16 @@ import java.util.regex.Pattern;
 
 public class Validator {
 
-    private static final DAOFactory daoFactory;
+    private static DAOFactory daoFactory;
 
-    static final Logger logger = Logger.getLogger(Main.class);
+    static final Logger logger = Logger.getLogger(Validator.class);
 
     static {
         try {
             DAOFactory.setDAOFactoryFQN(ProjectConstant.DAO_FACTORY_FQN);
             daoFactory = DAOFactory.getInstance();
         } catch (Exception e) {
-            try {
-                EmailSender.sendMessage(e.toString());
-            } catch (Exception ex) {
-                logger.error(ex);
-            }
-            logger.error(e);
-            System.out.println("\u26D4 Error is instantiating DAOFactory.!");
-            throw new RuntimeException(e);
+            LoggerController.daoInstantiatingException(e, Validator.class);
         }
     }
 
@@ -45,32 +37,29 @@ public class Validator {
         }
 
         try {
-            if (daoFactory.getTaxDAO().findUserByFilter(ProjectConstant.FIND_BY_ID + inputData).size() == 1) return true;
-        } catch (DAOException e) {
-            try {
-                EmailSender.sendMessage(e.toString());
-            } catch (Exception ex) {
-                logger.error(ex);
+            if (daoFactory.getTaxDAO().findUserByFilter(ProjectConstant.FIND_BY_ID + inputData).size() == 1) {
+                logger.info("Validation Id Number - Correct");
+                return true;
             }
+        } catch (DAOException e) {
             logger.error(e);
-            System.out.println("\u26D4 Failed!");
+            System.out.println("\u26D4 Validation Id Number Failed!");
         }
         return false;
     }
 
     public static boolean validationIdNumberForTax(int idPayment) {
         try {
-            if (idPayment <- 0)  return false;
+            if (idPayment <= 0)  return false;
             List<TaxType> taxList = daoFactory.getTaxDAO().findTaxByFilter(ProjectConstant.FIND_TAX_BY_ID_PAYMENT + idPayment);
-            if (taxList == null || taxList.size() == 0) return true;
-        } catch (DAOException e) {
-            try {
-                EmailSender.sendMessage(e.toString());
-            } catch (Exception ex) {
-                logger.error(ex);
+
+            if (taxList == null || taxList.size() == 0) {
+                logger.info("Validation Id Number For Tax - Correct");
+                return true;
             }
+        } catch (DAOException e) {
             logger.error(e);
-            System.out.println("\u26D4 Failed!");
+            System.out.println("\u26D4 Validation Id Number For Tax Failed!");
         }
         return false;
     }

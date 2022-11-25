@@ -18,3 +18,387 @@
 2022-11-25 15:19:08 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
 2022-11-25 15:19:08 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
 2022-11-25 15:19:08 INFO  [main]: User taxes addedUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 15:31:33 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 15:31:33 INFO  [main]: User id generated = 230299
+2022-11-25 15:31:33 INFO  [main]: User added
+2022-11-25 15:31:33 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 15:31:33 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 15:31:33 INFO  [main]: User taxes addedUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 15:31:42 INFO  [main]: Program started!
+2022-11-25 15:31:56 INFO  [main]: Program finished!
+2022-11-25 18:39:07 INFO  [main]: Program started!
+2022-11-25 18:39:12 INFO  [main]: Execute Create User Command
+2022-11-25 18:39:45 INFO  [main]: Starting insert user User{id=0, firstName='Maarusia', lastName='Svitlo', email='kdfdskv@fdsf.das', sex=female, dateOfBirth='2003-04-05', taxes=null}
+2022-11-25 18:39:45 INFO  [main]: User id generated = 714920
+2022-11-25 18:39:45 INFO  [main]: User added
+2022-11-25 18:39:45 INFO  [main]: User was added successfully!
+2022-11-25 18:39:51 INFO  [main]: Program finished!
+2022-11-25 18:50:56 INFO  [main]: Program started!
+2022-11-25 18:51:01 INFO  [main]: Execute "Get User" Command
+2022-11-25 18:51:20 INFO  [main]: Program started!
+2022-11-25 18:51:28 INFO  [main]: Execute "Get All Users" Command
+2022-11-25 18:51:28 INFO  [main]: End execution "Get All Users" Command
+2022-11-25 18:51:39 INFO  [main]: Execute "Get User" Command
+2022-11-25 18:51:40 INFO  [main]: Validation Id Number - Correct
+2022-11-25 18:51:40 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[TaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}]}
+2022-11-25 18:52:23 INFO  [main]: Program finished!
+2022-11-25 18:54:23 INFO  [main]: Program started!
+2022-11-25 18:54:27 INFO  [main]: Execute "Get User" Command
+2022-11-25 19:51:52 INFO  [main]: Program started!
+2022-11-25 19:51:52 INFO  [main]: inputMenuCommand started
+2022-11-25 19:51:56 INFO  [main]: Execute "Main Menu"
+2022-11-25 19:51:56 INFO  [main]: Execute "Get All Users" Command
+2022-11-25 19:51:56 INFO  [main]: End execution "Get All Users" Command
+2022-11-25 19:51:56 INFO  [main]: inputMenuCommand started
+2022-11-25 19:52:03 INFO  [main]: Execute "Main Menu"
+2022-11-25 19:52:03 INFO  [main]: Execute "Get User" Command
+2022-11-25 19:52:04 INFO  [main]: Validation Id Number - Correct
+2022-11-25 19:52:04 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[TaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}]}
+2022-11-25 19:52:04 INFO  [main]: inputMenuCommand started
+2022-11-25 19:52:08 INFO  [main]: Execute "User Menu"
+2022-11-25 19:52:08 INFO  [main]: Execute "Add Tax" Command
+2022-11-25 19:52:14 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 19:52:32 INFO  [main]: User taxes addedUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[TaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}]}
+2022-11-25 19:52:32 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[TaxType{idNumber=213, TYPE=0, value=3.3030750000000006, amountOfTax=66.06150000000001, datePayment='2000-04-05'}]}
+2022-11-25 19:52:32 INFO  [main]: End execution "Add Tax" Command
+2022-11-25 19:52:32 INFO  [main]: inputMenuCommand started
+2022-11-25 19:52:56 INFO  [main]: Execute "User Menu"
+2022-11-25 19:52:56 INFO  [main]: Execute "Exit To Main Menu" Command
+2022-11-25 19:52:56 INFO  [main]: Program started!
+2022-11-25 19:52:56 INFO  [main]: inputMenuCommand started
+2022-11-25 19:53:01 INFO  [main]: Execute "Main Menu"
+2022-11-25 19:53:01 INFO  [main]: Execute "Get All Users" Command
+2022-11-25 19:53:01 INFO  [main]: End execution "Get All Users" Command
+2022-11-25 19:53:01 INFO  [main]: inputMenuCommand started
+2022-11-25 19:53:08 INFO  [main]: Execute "Main Menu"
+2022-11-25 19:53:08 INFO  [main]: Execute "Get User" Command
+2022-11-25 19:53:08 INFO  [main]: Validation Id Number - Correct
+2022-11-25 19:53:08 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[TaxType{idNumber=213, TYPE=0, value=3.3030750000000006, amountOfTax=66.06150000000001, datePayment='2000-04-05'}]}
+2022-11-25 19:53:08 INFO  [main]: inputMenuCommand started
+2022-11-25 19:53:17 INFO  [main]: Execute "User Menu"
+2022-11-25 19:53:17 INFO  [main]: Program finished!
+2022-11-25 19:53:43 INFO  [main]: Program started!
+2022-11-25 19:53:43 INFO  [main]: inputMenuCommand started
+2022-11-25 19:53:47 INFO  [main]: Execute "Main Menu"
+2022-11-25 19:53:47 INFO  [main]: Execute "Get User" Command
+2022-11-25 19:53:47 INFO  [main]: Validation Id Number - Correct
+2022-11-25 19:53:47 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[TaxType{idNumber=213, TYPE=0, value=3.3030750000000006, amountOfTax=66.06150000000001, datePayment='2000-04-05'}]}
+2022-11-25 19:53:47 INFO  [main]: inputMenuCommand started
+2022-11-25 19:53:50 INFO  [main]: Execute "User Menu"
+2022-11-25 19:53:50 INFO  [main]: Execute "Add Tax" Command
+2022-11-25 19:53:51 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 19:54:01 INFO  [main]: User taxes addedUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[TaxType{idNumber=213, TYPE=0, value=3.3030750000000006, amountOfTax=66.06150000000001, datePayment='2000-04-05'}]}
+2022-11-25 19:54:01 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[TaxType{idNumber=131, TYPE=0, value=5.248400000000001, amountOfTax=26.242000000000004, datePayment='2000-03-01'}]}
+2022-11-25 19:54:01 INFO  [main]: End execution "Add Tax" Command
+2022-11-25 19:54:01 INFO  [main]: inputMenuCommand started
+2022-11-25 19:54:06 INFO  [main]: Execute "User Menu"
+2022-11-25 19:54:06 INFO  [main]: Program finished!
+2022-11-25 19:56:37 INFO  [main]: Program started!
+2022-11-25 19:56:37 INFO  [main]: inputMenuCommand started
+2022-11-25 19:56:40 INFO  [main]: Execute "Main Menu"
+2022-11-25 19:56:40 INFO  [main]: Execute "Get User" Command
+2022-11-25 19:56:40 INFO  [main]: Validation Id Number - Correct
+2022-11-25 19:56:40 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[TaxType{idNumber=131, TYPE=0, value=5.248400000000001, amountOfTax=26.242000000000004, datePayment='2000-03-01'}]}
+2022-11-25 19:56:40 INFO  [main]: inputMenuCommand started
+2022-11-25 19:56:43 INFO  [main]: Execute "User Menu"
+2022-11-25 19:56:43 INFO  [main]: Execute "Add Tax" Command
+2022-11-25 19:56:45 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 19:56:54 INFO  [main]: User taxes addedUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[TaxType{idNumber=131, TYPE=0, value=5.248400000000001, amountOfTax=26.242000000000004, datePayment='2000-03-01'}]}
+2022-11-25 19:56:54 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[TaxType{idNumber=131, TYPE=0, value=5.248400000000001, amountOfTax=26.242000000000004, datePayment='2000-03-01'}, TaxType{idNumber=13, TYPE=0, value=281.08079999999995, amountOfTax=936.9359999999999, datePayment='2000-03-04'}]}
+2022-11-25 19:56:54 INFO  [main]: End execution "Add Tax" Command
+2022-11-25 19:56:54 INFO  [main]: inputMenuCommand started
+2022-11-25 19:56:59 INFO  [main]: Execute "User Menu"
+2022-11-25 19:56:59 INFO  [main]: Execute "Exit To Main Menu" Command
+2022-11-25 19:56:59 INFO  [main]: Program started!
+2022-11-25 19:56:59 INFO  [main]: inputMenuCommand started
+2022-11-25 19:57:04 INFO  [main]: Execute "Main Menu"
+2022-11-25 19:57:04 INFO  [main]: Execute "FindTaxCommands"
+2022-11-25 19:57:04 INFO  [main]: inputMenuCommand started
+2022-11-25 19:57:08 INFO  [main]: Execute "Find Tax Menu"
+2022-11-25 19:57:08 INFO  [main]: Execute "Find Tax" Command
+2022-11-25 19:57:14 INFO  [main]: End execution "Find Tax" Command
+2022-11-25 19:57:14 INFO  [main]: inputMenuCommand started
+2022-11-25 19:57:17 INFO  [main]: Execute "Find Tax Menu"
+2022-11-25 19:57:17 INFO  [main]: Program finished!
+2022-11-25 19:59:14 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 19:59:14 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 19:59:14 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 19:59:14 INFO  [main]: User id generated = 612456
+2022-11-25 19:59:14 INFO  [main]: User added
+2022-11-25 19:59:14 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 19:59:14 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 19:59:14 INFO  [main]: User taxes addedUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 19:59:14 INFO  [main]: Validation Id Number - Correct
+2022-11-25 20:18:28 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:18:28 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:18:28 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:18:28 INFO  [main]: User id generated = 515127
+2022-11-25 20:18:28 INFO  [main]: User added
+2022-11-25 20:18:28 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:18:28 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:18:28 INFO  [main]: User taxes addedUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:18:28 INFO  [main]: Validation Id Number - Correct
+2022-11-25 20:21:04 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:21:04 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:21:04 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:21:04 INFO  [main]: User id generated = 763624
+2022-11-25 20:21:04 INFO  [main]: User added
+2022-11-25 20:21:04 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:21:04 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:21:04 INFO  [main]: User taxes addedUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:21:04 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:21:04 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:21:04 INFO  [main]: Validation Id Number - Correct
+2022-11-25 20:25:55 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:25:55 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:25:55 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:25:55 INFO  [main]: User id generated = 720598
+2022-11-25 20:25:55 INFO  [main]: User added
+2022-11-25 20:25:55 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:25:55 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:25:55 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='smoliak23@ukr.net', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:43 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:27:43 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:27:43 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:27:43 INFO  [main]: User id generated = 133446
+2022-11-25 20:27:43 INFO  [main]: User added
+2022-11-25 20:27:43 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:43 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:43 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:43 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:43 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:43 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:43 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:27:43 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:43 INFO  [main]: Validation Id Number - Correct
+2022-11-25 20:27:58 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:27:58 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:27:58 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:27:58 INFO  [main]: User id generated = 644327
+2022-11-25 20:27:58 INFO  [main]: User added
+2022-11-25 20:27:58 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:58 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:58 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:58 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:58 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:58 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:58 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:27:58 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:27:58 INFO  [main]: Validation Id Number - Correct
+2022-11-25 20:28:35 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:28:35 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:28:35 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:28:35 INFO  [main]: User id generated = 25866
+2022-11-25 20:28:35 INFO  [main]: User added
+2022-11-25 20:28:35 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:28:35 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:28:35 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:28:35 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:28:35 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:28:35 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:28:35 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:28:35 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:28:35 INFO  [main]: Validation Id Number - Correct
+2022-11-25 20:29:51 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:29:51 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:29:51 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:29:51 INFO  [main]: User id generated = 620853
+2022-11-25 20:29:51 INFO  [main]: User added
+2022-11-25 20:29:51 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:29:51 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:29:51 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:29:51 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:29:51 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:29:51 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:29:51 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:29:51 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:29:51 INFO  [main]: Validation Id Number - Correct
+2022-11-25 20:30:01 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:30:01 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:30:01 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:30:01 INFO  [main]: User id generated = 729960
+2022-11-25 20:30:01 INFO  [main]: User added
+2022-11-25 20:30:01 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:01 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:01 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:01 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:01 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:01 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:01 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:30:01 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:01 INFO  [main]: Validation Id Number - Correct
+2022-11-25 20:30:29 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:30:29 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:30:29 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:30:29 INFO  [main]: User id generated = 404722
+2022-11-25 20:30:29 INFO  [main]: User added
+2022-11-25 20:30:29 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:29 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:29 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:29 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:29 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:29 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:29 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:30:29 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:30:29 INFO  [main]: Validation Id Number - Correct
+2022-11-25 20:36:55 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:36:55 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:36:55 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:36:55 INFO  [main]: User id generated = 503170
+2022-11-25 20:36:55 INFO  [main]: User added
+2022-11-25 20:36:55 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:36:55 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:36:55 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:36:55 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:36:55 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:36:55 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:36:55 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:36:55 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:36:55 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:36:55 INFO  [main]: User deleted User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:37:08 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:37:08 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:37:08 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:37:08 INFO  [main]: User id generated = 328349
+2022-11-25 20:37:08 INFO  [main]: User added
+2022-11-25 20:37:08 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:37:08 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:37:08 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:37:08 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:37:08 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:37:08 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:37:08 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:37:08 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:37:08 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:37:08 INFO  [main]: User deleted User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:38:14 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:38:14 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:38:14 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:38:14 INFO  [main]: User id generated = 270206
+2022-11-25 20:38:14 INFO  [main]: User added
+2022-11-25 20:38:14 INFO  [main]: User deleted null
+2022-11-25 20:38:35 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:38:35 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:38:35 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:38:35 INFO  [main]: User id generated = 626529
+2022-11-25 20:38:35 INFO  [main]: User added
+2022-11-25 20:38:35 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:38:35 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:38:35 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:38:35 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:38:36 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:38:36 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:38:36 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:38:36 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:38:36 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:38:36 INFO  [main]: User deleted User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:39:21 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:39:21 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:39:21 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:39:21 INFO  [main]: User id generated = 379369
+2022-11-25 20:39:21 INFO  [main]: User added
+2022-11-25 20:39:21 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:39:21 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:39:21 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:39:21 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:39:21 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:39:21 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:39:21 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:39:21 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:39:21 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:39:21 INFO  [main]: User deleted User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:40:41 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:40:41 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:40:41 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:40:41 INFO  [main]: User id generated = 211564
+2022-11-25 20:40:41 INFO  [main]: User added
+2022-11-25 20:40:41 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:40:41 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:40:41 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:40:41 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:40:41 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:40:41 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:40:41 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:40:41 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:40:41 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:40:41 INFO  [main]: User deleted User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:05 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:41:05 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:41:05 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:41:05 INFO  [main]: User id generated = 663328
+2022-11-25 20:41:05 INFO  [main]: User added
+2022-11-25 20:41:05 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:05 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:05 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:05 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:05 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:05 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:05 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:41:05 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:05 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:05 INFO  [main]: User deleted User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:53 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:41:53 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:41:53 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:41:53 INFO  [main]: User id generated = 974780
+2022-11-25 20:41:53 INFO  [main]: User added
+2022-11-25 20:41:53 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:53 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:53 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:53 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:53 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:53 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:53 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:41:53 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:53 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:41:53 INFO  [main]: User deleted User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:43:29 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:43:29 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:43:29 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:43:29 INFO  [main]: User id generated = 804033
+2022-11-25 20:43:29 INFO  [main]: User added
+2022-11-25 20:43:29 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:43:29 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:43:29 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:43:29 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:43:29 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:43:29 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:43:29 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:43:29 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:43:29 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:43:29 INFO  [main]: User deleted User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:43:29 INFO  [main]: Starting insert user User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:43:29 INFO  [main]: User id generated = 655413
+2022-11-25 20:43:29 INFO  [main]: User added
+2022-11-25 20:44:41 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:44:41 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:44:41 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:44:41 INFO  [main]: User id generated = 548365
+2022-11-25 20:44:41 INFO  [main]: User added
+2022-11-25 20:44:41 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:41 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:41 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:41 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:41 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:41 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:41 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:44:41 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:41 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:41 INFO  [main]: User deleted User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:41 INFO  [main]: Validation Id Number - Correct
+2022-11-25 20:44:55 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:44:55 INFO  [main]: Validation Id Number For Tax - Correct
+2022-11-25 20:44:55 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 20:44:55 INFO  [main]: User id generated = 266703
+2022-11-25 20:44:55 INFO  [main]: User added
+2022-11-25 20:44:55 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:55 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:55 INFO  [main]: User updated User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:55 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:55 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:55 INFO  [main]: User taxes addedUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:55 INFO  [main]: Tax deletedTaxType{idNumber=321, TYPE=0, value=821.9372111999999, amountOfTax=1677.4228799999999, datePayment='2002-04-05'}
+2022-11-25 20:44:55 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:55 INFO  [main]: UserUser{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:55 INFO  [main]: User deleted User{id=1, firstName='Ma', lastName='Smo', email='smoliak23@ukr.net', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 20:44:56 INFO  [main]: Validation Id Number - Correct

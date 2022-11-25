@@ -10,8 +10,8 @@ public class ProjectConstant {
 //    public static final String DAO_FACTORY_FQN = "com.panchuk.tax.dao.mysql.MysqlDAOFactory";
     public static final String DAO_FACTORY_FQN = "com.panchuk.tax.dao.xml.XMLDAOFactory";
 
-    public static final String writeXMLPath = "xml/user.xml";
-//    public static final String writeXMLPath = "src/main/resources/test_user.xml";   // for testing
+//    public static final String writeXMLPath = "xml/user.xml";
+    public static final String writeXMLPath = "src/main/resources/test_user.xml";   // for testing
 
     /** TAX MULTIPLIER */
     public static final double TAX_INCOME = 0.49;
@@ -30,7 +30,6 @@ public class ProjectConstant {
 
 
     /** TEXT */
-    public static final String TEXT_INCORRECT_VALUE = "\u26D4 Incorrect value was entered!";
     public static final String TEXT_WENT_WRONG = "\u274C Something went wrong!!! Check logger.";
 
 

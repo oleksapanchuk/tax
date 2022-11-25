@@ -7,7 +7,9 @@ import com.panchuk.tax.model.TaxType;
 import com.panchuk.tax.model.User;
 import com.panchuk.tax.model.tax.TaxTypeIncome;
 import com.panchuk.tax.util.Validator;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -49,6 +51,21 @@ public class XmlDaoTest {
         XMLWriter.buildXML(userList, ProjectConstant.writeXMLPath);
     }
 
+    @AfterAll
+    static void testWriteXMLFileEnd() {
+
+        List<User> userList = new ArrayList<>();
+        User user01 = new User(
+                1,
+                "Mark",
+                "Smoliak",
+                User.Sex.male,
+                "smoliak23@gmail.com",
+                "2003-12-18"
+        );
+        userList.add(user01);
+        XMLWriter.buildXML(userList, ProjectConstant.writeXMLPath);
+    }
 
     @Test
     void testSAXParser() {
@@ -63,8 +80,9 @@ public class XmlDaoTest {
                 "smoliak23@gmail.com",
                 "2003-12-18"
         );
-        assertEquals(user01, userList.get(0));
+        assertEquals(user01, userList.get(1));
     }
+
 
 
     @Test
@@ -104,6 +122,28 @@ public class XmlDaoTest {
     }
 
     @Test
+    void testUpdateUser() {
+
+        User user01Test;
+        User user02Test;
+        try {
+            user01Test = daoFactory.getTaxDAO().getUser(1);
+            user01Test.setFirstName("Ma");
+            user01Test.setLastName("Smo");
+            user01Test.setEmail("smoliak23@ukr.net");
+            daoFactory.getTaxDAO().updateUser(user01Test);
+
+            user02Test = daoFactory.getTaxDAO().getUser(1);
+
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
+        }
+
+        assertEquals(user01Test, user02Test);
+
+    }
+
+    @Test
     void testAddDeleteTax() {
 
         User user01Test;
@@ -135,6 +175,18 @@ public class XmlDaoTest {
         assertEquals(tax01.getDatePayment(), tax01Test.getDatePayment());
 
 
+        try {
+
+            daoFactory.getTaxDAO().deleteUserTax(321);
+
+            user01Test = daoFactory.getTaxDAO().getUser(1);
+
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
+        }
+
+        assertEquals(0, user01Test.getTax().size());
+
     }
 
 
@@ -164,6 +216,28 @@ public class XmlDaoTest {
                 Arguments.of(1, true),
                 Arguments.of(-12, false)
         );
+    }
+
+    @Test
+    void testDeleteUser() {
+        User user01Test;
+        List<User> userList;
+        try {
+            user01Test = daoFactory.getTaxDAO().getUser(1);
+            daoFactory.getTaxDAO().deleteUser(user01Test);
+
+            userList = daoFactory.getTaxDAO().findUserByFilter(ProjectConstant.FIND_ALL_USERS);
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
+        }
+
+        assertNotNull(userList);
+        assertEquals(1, userList.size());
+
+        List<User> users = new ArrayList<>();
+        users.add(user01Test);
+        XMLWriter.buildXML(users, ProjectConstant.writeXMLPath);
+
     }
 
 }

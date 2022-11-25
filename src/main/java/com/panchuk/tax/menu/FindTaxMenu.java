@@ -5,11 +5,13 @@ import com.panchuk.tax.menu.command.ExitCommand;
 import com.panchuk.tax.menu.command.find_command.FindTaxCommand;
 import com.panchuk.tax.menu.command.user_command.ExitToMainMenuCommand;
 import com.panchuk.tax.util.PrettyConsolePrinting;
+import org.apache.log4j.Logger;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FindTaxMenu {
+    static final Logger logger = Logger.getLogger(FindTaxMenu.class);
     private final Map<String, MenuItem> menuItems;
 
     public FindTaxMenu() {
@@ -22,6 +24,7 @@ public class FindTaxMenu {
     }
 
     public void execute(String command) {
+        logger.info("Execute \"Find Tax Menu\"");
         menuItems.getOrDefault(command, () -> System.out.println("\uD83D\uDDF2 Incorrect command! Try again!!!\n")).execute();
     }
 

@@ -4,19 +4,21 @@ import com.panchuk.tax.DAOException;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.menu.MenuItem;
+import com.panchuk.tax.util.LoggerController;
 import com.panchuk.tax.util.PrettyConsolePrinting;
 import com.panchuk.tax.util.Reader;
+import org.apache.log4j.Logger;
 
 public class FindUserCommand implements MenuItem {
-
-    private static final DAOFactory daoFactory;
+    static final Logger logger = Logger.getLogger(FindUserCommand.class);
+    private static DAOFactory daoFactory;
 
     static {
         try {
             DAOFactory.setDAOFactoryFQN(ProjectConstant.DAO_FACTORY_FQN);
             daoFactory = DAOFactory.getInstance();
         } catch (Exception e) {
-            throw new RuntimeException("Error is instantiating DAOFactory.", e);
+            LoggerController.daoInstantiatingException(e, FindUserCommand.class);
         }
     }
 
@@ -28,6 +30,9 @@ public class FindUserCommand implements MenuItem {
 
     @Override
     public void execute() {
+
+        logger.info("Execute \"Find User\" Command");
+
         try {
 
             String query = PARAM + switch (PARAM) {
@@ -62,8 +67,10 @@ public class FindUserCommand implements MenuItem {
             PrettyConsolePrinting.printUserList(daoFactory.getTaxDAO().findUserByFilter(query));
 
         } catch (DAOException e) {
-            throw new RuntimeException(e);
+            LoggerController.daoException(e, FindUserCommand.class);
         }
+
+        logger.info("End execution \"Find User\" Command");
     }
 
     @Override
