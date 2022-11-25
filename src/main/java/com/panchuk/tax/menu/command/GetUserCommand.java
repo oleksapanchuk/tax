@@ -1,17 +1,22 @@
 package com.panchuk.tax.menu.command;
 
 import com.panchuk.tax.DAOException;
+import com.panchuk.tax.Main;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.menu.MenuItem;
 import com.panchuk.tax.menu.UserMenu;
 import com.panchuk.tax.model.User;
+import com.panchuk.tax.util.EmailSender;
 import com.panchuk.tax.util.PrettyConsolePrinting;
 import com.panchuk.tax.util.Reader;
+import org.apache.log4j.Logger;
 
 import static com.panchuk.tax.util.Reader.inputMenuCommand;
 
 public class GetUserCommand implements MenuItem {
+
+    static final Logger logger = Logger.getLogger(Main.class);
     private static final DAOFactory daoFactory;
 
     static {
@@ -26,7 +31,7 @@ public class GetUserCommand implements MenuItem {
     public void execute() {
 
         int idUser = Reader.inputIdUser("Input user id: ", ProjectConstant.VALID_ID_NUMBER);
-        User user;
+        User user = null;
 
         try {
 
@@ -35,7 +40,13 @@ public class GetUserCommand implements MenuItem {
             PrettyConsolePrinting.printUser(user);
 
         } catch (DAOException e) {
-            throw new RuntimeException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
 
         UserMenu userMenu = new UserMenu(user);

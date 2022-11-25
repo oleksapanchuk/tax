@@ -4,3 +4,17 @@
 2022-11-25 14:34:25 INFO  [main]: Program started!
 2022-11-25 14:34:36 INFO  [main]: UserUser{id=11, firstName='Богдан', lastName='Карасійчук', email='bodichkakar@gmail.com', sex=male, dateOfBirth='2004-12-01', taxes=[com.panchuk.tax.model.tax.TaxTypeTransferFromAbroad@9e369cc8, com.panchuk.tax.model.tax.TaxTypeBenefitsForChildren@7af96757, com.panchuk.tax.model.tax.TaxTypeRemuneration@c517f244]}
 2022-11-25 14:34:38 INFO  [main]: Program finished!
+2022-11-25 15:18:06 INFO  [main]: Program started!
+2022-11-25 15:18:13 INFO  [main]: Program finished!
+2022-11-25 15:18:48 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 15:18:48 INFO  [main]: User id generated = 753782
+2022-11-25 15:18:48 INFO  [main]: User added
+2022-11-25 15:18:48 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 15:18:48 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 15:18:48 INFO  [main]: User taxes addedUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 15:19:08 INFO  [main]: Starting insert user User{id=134, firstName='Gran', lastName='Barnum', email='abrabak@gmail.com', sex=male, dateOfBirth='2004-01-12', taxes=null}
+2022-11-25 15:19:08 INFO  [main]: User id generated = 651582
+2022-11-25 15:19:08 INFO  [main]: User added
+2022-11-25 15:19:08 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 15:19:08 INFO  [main]: UserUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}
+2022-11-25 15:19:08 INFO  [main]: User taxes addedUser{id=1, firstName='Mark', lastName='Smoliak', email='smoliak23@gmail.com', sex=male, dateOfBirth='2003-12-18', taxes=[]}

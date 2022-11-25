@@ -79,7 +79,7 @@ public class PrettyConsolePrinting {
         Table table = new Table(2, BorderStyle.UNICODE_ROUND_BOX, ShownBorders.SURROUND_HEADER_AND_COLUMNS);
 
         table.addCell(ColorConstant.YELLOW_BOLD_BRIGHT + "    " + user.getFirstName() + " " +  user.getLastName()
-                        + "    " + ColorConstant.RESET, new CellStyle(CellStyle.HorizontalAlign.CENTER), 2);
+                + "    " + ColorConstant.RESET, new CellStyle(CellStyle.HorizontalAlign.CENTER), 2);
         table.addCell(ColorConstant.GREEN_BOLD + " ID: " + ColorConstant.RESET, rightStyle);
         table.addCell(ColorConstant.PURPLE + " " + user.getId() + ColorConstant.RESET);
         table.addCell(ColorConstant.GREEN_BOLD + " Sex: " + ColorConstant.RESET, rightStyle);

@@ -1,6 +1,7 @@
 package com.panchuk.tax.menu.command.user_command;
 
 import com.panchuk.tax.DAOException;
+import com.panchuk.tax.Main;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.dao.DAOFactory;
 import com.panchuk.tax.menu.MenuItem;
@@ -8,6 +9,7 @@ import com.panchuk.tax.model.TaxType;
 import com.panchuk.tax.model.User;
 import com.panchuk.tax.util.PrettyConsolePrinting;
 import com.panchuk.tax.util.Reader;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -16,6 +18,8 @@ public class AddTaxCommand implements MenuItem {
     private final User user;
 
     private static final DAOFactory daoFactory;
+    static final Logger logger = Logger.getLogger(Main.class);
+
 
     static {
         try {
@@ -33,7 +37,10 @@ public class AddTaxCommand implements MenuItem {
     @Override
     public void execute() {
 
+        logger.info("adding tax command");
+
         List<TaxType> taxes = Reader.inputTax();
+
 
         if (taxes == null || taxes.size() == 0) {
             System.out.println("You do not add any tax or something went wrong!");

@@ -1,9 +1,11 @@
 package com.panchuk.tax.util;
 
+import com.panchuk.tax.Main;
 import com.panchuk.tax.constant.ProjectConstant;
 import com.panchuk.tax.controller.TaxController;
 import com.panchuk.tax.model.TaxType;
 import com.panchuk.tax.model.User;
+import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,6 +17,8 @@ public class Reader {
 
     private static final Scanner scanner;
     private static final BufferedReader bf;
+
+    static final Logger logger = Logger.getLogger(Main.class);
 
     private static final Map<Integer, User.Sex> gender;
 
@@ -51,8 +55,15 @@ public class Reader {
                 else System.out.print("Input correct id number: ");
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
+        return false;
     }
 
     public static User.Sex inputSex(String inputAim) {
@@ -82,8 +93,15 @@ public class Reader {
             }
 
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
+        return null;
     }
 
     public static int inputIdUser(String inputAim, Pattern pattern) {
@@ -113,8 +131,15 @@ public class Reader {
                 else System.out.print(ProjectConstant.TEXT_WENT_WRONG);
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
+        return 0;
     }
 
     public static double inputDouble(String inputAim) {
@@ -132,9 +157,15 @@ public class Reader {
                 else System.out.print("Input correct id number: ");
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
-
+        return 0;
     }
 
     public static String inputString(String inputAim, Pattern pattern) {
@@ -152,9 +183,15 @@ public class Reader {
                 else System.out.print("Input valid value: ");
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                EmailSender.sendMessage(e.toString());
+            } catch (Exception ex) {
+                logger.error(ex);
+            }
+            logger.error(e);
+            System.out.println("\u26D4 Failed!");
         }
-
+        return null;
     }
 
     public static List<TaxType> inputTax() {
